@@ -25,7 +25,7 @@ export class AuthService {
 
   authSignUpURL: string = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseAPIkey}`;
 
-  authLoginURL = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebaseAPIkey}`;
+  authLoginURL: string = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebaseAPIkey}`;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -110,6 +110,8 @@ export class AuthService {
       this.logout();
     }, duration);
   }
+
+  getUserData() {}
 
   private authentication(
     email: string,

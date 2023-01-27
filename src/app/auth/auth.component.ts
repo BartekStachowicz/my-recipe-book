@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { DataStorageService } from '../services/data-storage.service';
 import { AuthResponeData, AuthService } from './services/auth.service';
-import { DataStorageService } from 'src/app/services/data-storage.service';
 
 @Component({
   selector: 'app-auth',
@@ -52,7 +52,7 @@ export class AuthComponent implements OnInit {
       (responseData) => {
         // console.log(responseData);
         this.isLoading = false;
-        this.dataStorageService.fetchData();
+        this.dataStorageService.fetchData().subscribe();
         this.router.navigate(['/recipes']);
       },
       (errorMsg) => {

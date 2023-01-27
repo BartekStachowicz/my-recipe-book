@@ -41,11 +41,13 @@
                 style="cursor: pointer"
                 [ngClass]="{ 'disable-link': disabledSave }"
                 (click)="onStorageData()"
-                >Save data</a
+                >Save changed recipes</a
               >
             </li>
             <li>
-              <a style="cursor: pointer" (click)="onFetchData()">Fetch data</a>
+              <a style="cursor: pointer" (click)="onFetchData()"
+                >Restore recipes</a
+              >
             </li>
           </ul>
         </li>
