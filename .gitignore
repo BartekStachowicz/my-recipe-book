@@ -43,4 +43,5 @@ Thumbs.db
 
 
 # Firebase
-/firebase
+/.firebase
+/.github
