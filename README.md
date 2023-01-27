@@ -1,11 +1,10 @@
 # MyRecipeBook
 
-<div style="align: center">
+<div>
 
-<h3 style="align: center">Support Desk App</h3>
+<h3>Recipe Book</h3>
 
-  <p style="align: center">
-    
+  <p>
     <br />
     <br />
     <br />
