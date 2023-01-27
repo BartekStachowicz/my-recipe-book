@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthResponeData, AuthService } from './services/auth.service';
+import { DataStorageService } from 'src/app/services/data-storage.service';
 
 @Component({
   selector: 'app-auth',
@@ -16,7 +17,11 @@ export class AuthComponent implements OnInit {
 
   authForm: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private dataStorageService: DataStorageService
+  ) {}
 
   ngOnInit() {
     this.initForm();
@@ -47,6 +52,7 @@ export class AuthComponent implements OnInit {
       (responseData) => {
         // console.log(responseData);
         this.isLoading = false;
+        this.dataStorageService.fetchData();
         this.router.navigate(['/recipes']);
       },
       (errorMsg) => {
