@@ -1,10 +1,10 @@
 # MyRecipeBook
 
-<div>
+<div align="center">
 
-<h3>Recipe Book</h3>
+<h3 align="center">Recipe Book</h3>
 
-  <p>
+  <p align="center">
     <br />
     <a href="https://recipe-project-database-5cfc2.web.app">View Demo</a>
   </p>
