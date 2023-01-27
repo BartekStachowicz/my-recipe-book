@@ -6,8 +6,6 @@
 
   <p>
     <br />
-    <br />
-    <br />
     <a href="https://recipe-project-database-5cfc2.web.app">View Demo</a>
   </p>
 </div>
