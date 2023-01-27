@@ -1,0 +1,58 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle"
+        (click)="collapsed = !collapsed"
+      >
+        <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3, 4]"></span>
+      </button>
+      <a class="navbar-brand" style="cursor: pointer" routerLink="/"
+        >Recipe Book</a
+      >
+    </div>
+    <div
+      class="navbar-collapse"
+      [class.collapse]="collapsed"
+      (window:resize)="collapsed = true"
+    >
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
+          <a style="cursor: pointer" routerLink="/recipes">Recipes</a>
+        </li>
+        <li routerLinkActive="active">
+          <a style="cursor: pointer" [routerLink]="'/list'">Shopping List</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="!isAuthenticated">
+          <a style="cursor: pointer" [routerLink]="'/authorization'"
+            >Login/Register</a
+          >
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" appDropdown *ngIf="isAuthenticated">
+          <a class="dropdown-toggle" role="button" (click)="onManage()"
+            >Manage <span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a
+                style="cursor: pointer"
+                [ngClass]="{ 'disable-link': disabledSave }"
+                (click)="onStorageData()"
+                >Save data</a
+              >
+            </li>
+            <li>
+              <a style="cursor: pointer" (click)="onFetchData()">Fetch data</a>
+            </li>
+          </ul>
+        </li>
+        <li *ngIf="isAuthenticated">
+          <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
