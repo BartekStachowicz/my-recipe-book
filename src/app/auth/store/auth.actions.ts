@@ -5,7 +5,6 @@ export const LOGOUT = '[AUTH] LOGOUT';
 export const LOGIN_START = '[AUTH] LOGIN_START';
 export const LOGIN_FAIL = '[AUTH] LOGIN_FAIL';
 export const SIGNUP_START = '[AUTH] SIGNUP_START';
-// export const SIGNUP_SUCCESS = '[AUTH] SIGNUP_SUCCESS';
 export const RESET_ERROR = '[AUTH] ERROR_RESET';
 export const AUTO_LOGIN = '[AUTH] AUTO_LOGIN';
 
@@ -17,6 +16,7 @@ export class LoginSuccess implements Action {
       id: string;
       token: string;
       expirationDate: Date;
+      redirect: boolean;
     }
   ) {}
 }

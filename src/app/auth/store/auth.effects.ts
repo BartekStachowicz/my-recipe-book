@@ -33,6 +33,7 @@ const authentication = (
     id: id,
     token: token,
     expirationDate: expirationDate,
+    redirect: true,
   });
 };
 
@@ -152,6 +153,7 @@ export class AuthEffects {
             id: loadedUser.id,
             token: loadedUser.token,
             expirationDate: new Date(userData._tokenExpirationDate),
+            redirect: false,
           });
         }
         return { type: 'DUMMY' };
@@ -177,8 +179,10 @@ export class AuthEffects {
     () => {
       return this.actions$.pipe(
         ofType(AuthActions.LOGIN_SUCCESS),
-        tap(() => {
-          this.router.navigate(['/']);
+        tap((action: AuthActions.LoginSuccess) => {
+          if (action.payload.redirect) {
+            this.router.navigate(['/']);
+          }
         })
       );
     },

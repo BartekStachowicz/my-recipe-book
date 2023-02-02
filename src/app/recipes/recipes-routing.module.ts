@@ -26,6 +26,7 @@ const recipeRoutes: Routes = [
         resolve: [RecipeResolverService],
       },
     ],
+    resolve: [RecipeResolverService],
   },
 ];
 

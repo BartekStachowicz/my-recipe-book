@@ -3,10 +3,8 @@ import { Store } from '@ngrx/store';
 import * as fromApp from '../store/app.reducer';
 import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AuthService } from '../auth/services/auth.service';
-import { RecipeService } from '../recipes/services/recipe.service';
-import { DataStorageService } from '../services/data-storage.service';
 import * as AuthActions from '../auth/store/auth.actions';
+import * as RecipesActions from '../recipes/store/recipes.actions';
 
 @Component({
   selector: 'header-component',
@@ -18,12 +16,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   disabledSave = false;
   isAuthenticated = false;
   private userSub: Subscription;
-  constructor(
-    private dataStorage: DataStorageService,
-    private recipeService: RecipeService,
-    private authService: AuthService,
-    private store: Store<fromApp.AppState>
-  ) {}
+  constructor(private store: Store<fromApp.AppState>) {}
 
   ngOnInit(): void {
     this.userSub = this.store
@@ -34,26 +27,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
       });
   }
 
-  onManage() {
-    if (this.recipeService.isRecipesEmpty()) {
-      this.disabledSave = true;
-    } else {
-      this.disabledSave = false;
-    }
-  }
+  onManage() {}
 
   onStorageData() {
-    this.dataStorage.storageData();
+    this.store.dispatch(new RecipesActions.StoreRecipes());
   }
 
   onFetchData() {
-    this.dataStorage.fetchData().subscribe(() => {
-      this.disabledSave = false;
-    });
+    this.store.dispatch(new RecipesActions.FetchRecipes());
   }
 
   onLogout() {
-    // this.authService.logout();
     this.store.dispatch(new AuthActions.Logout());
   }
 
