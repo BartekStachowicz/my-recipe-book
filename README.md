@@ -25,7 +25,6 @@
 ### Short description
 
 ![RECIPE_BOOK_PREVIEW_DESC][preview-desc]
-
 <p>
  <ul>
   <li>1. Login/Signup with email and password to manage recipes</li>
