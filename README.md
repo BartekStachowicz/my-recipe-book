@@ -25,6 +25,7 @@
 ### Short description
 
 ![RECIPE_BOOK_PREVIEW_DESC][preview-desc]
+
 <p>
  <ul>
   <li>1. Login/Signup with email and password to manage recipes</li>
@@ -59,7 +60,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 [angular-url]: https://angular.io/
 [angular]: https://img.shields.io/badge/Angular-FF0000?style=for-the-badge&logo=Angular
 [preview-app]: src/assets/recipe-book-screen.png
-[preview-desc]: src/assets/recipe-book-desc.png
+[preview-desc]: src/assets/recipe-book-desc-screen.png
 [github-issue]: https://img.shields.io/github/issues/BartekStachowicz/my-recipe-book?color=%235FBFF9&style=flat-square
 [linkedin]: https://img.shields.io/badge/Linkedin-0072b1?style=for-the-badge&logo=LinkedIn
 [linkedin-url]: https://linkedin.com/in/bstachowicz
