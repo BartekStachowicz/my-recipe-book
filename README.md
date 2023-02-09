@@ -20,6 +20,8 @@
 
 ![RECIPE_BOOK_PREVIEW][preview-app]
 
+<hr>
+
 ### Built With
 
 [![Angular][angular]][angular-url] & [![Firebase][firebase]][firebase-url] <br/>
