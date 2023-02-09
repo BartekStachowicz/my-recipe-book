@@ -38,7 +38,7 @@
 
 ## About The Project
 
-![RECIPE_BOOK_PREVIEW][preview-app]
+![RECIPE_BOOK_PREVIEW] src\assets\recipe-book-screen.png
 
 ### Built With
 
