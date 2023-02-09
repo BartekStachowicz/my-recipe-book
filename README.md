@@ -28,7 +28,7 @@
 
 <p>
  <ul>
-  <li>1. Login/Signup with email and password to manage recipes</li>
+  <li>1. Login/Signup with email and password to manage recipes (e.g. test@test.pl & qwerty)</li>
   <li>2. Create new recipe (after click save recipes are storing in database automatically)</li>
   <li>3. Save (e.g. after deleting a recipe) or download recipes manually</li>
   <li>4. Add ingredient from recipe to shopping list</li>
