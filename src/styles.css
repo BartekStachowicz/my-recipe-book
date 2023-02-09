@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #efe9f4;
+  padding-bottom: 200px;
+}
+
+.my-container {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #171d1c;
+  border-radius: 10px;
+  box-shadow: 6px 2px #888888;
+}
+
+.pre-scrollable {
+  max-height: 70vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

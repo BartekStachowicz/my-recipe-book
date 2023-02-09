@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <button
@@ -37,11 +37,16 @@
           ></a>
           <ul class="dropdown-menu">
             <li>
+              <a style="cursor: pointer" (click)="onNewRecipe()"
+                >Create new recipe</a
+              >
+            </li>
+            <li>
               <a
                 style="cursor: pointer"
                 [ngClass]="{ 'disable-link': disabledSave }"
                 (click)="onStorageData()"
-                >Save changed recipes</a
+                >Store recipes</a
               >
             </li>
             <li>

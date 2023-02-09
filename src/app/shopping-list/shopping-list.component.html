@@ -1,11 +1,16 @@
 <div class="row">
-  <div class="col-xs-10">
-    <app-shopping-edit></app-shopping-edit>
+  <div class="col-xs-12"><app-shopping-edit></app-shopping-edit></div>
+</div>
+<hr />
+<div class="row">
+  <div class="my-container col-xs-6" style="margin-right: 10px">
+    <label><span>📌</span> Shopping list</label>
     <hr />
     <ul class="list-group">
       <a
         class="list-group-item"
         style="cursor: pointer"
+        [@shList]
         *ngFor="
           let ingredient of (ingredients | async).ingredients;
           let index = index
@@ -16,4 +21,19 @@
       </a>
     </ul>
   </div>
+
+  <!-- <div
+    class="my-container col-xs-3"
+    style="margin-right: 10px; min-height: 275px"
+  >
+    <label><span>📌</span> Shopping list 2</label>
+    <hr />
+  </div>
+  <div
+    class="my-container col-xs-3"
+    style="margin-right: 10px; min-height: 275px"
+  >
+    <label><span>📌</span> Shopping list 3</label>
+    <hr />
+  </div> -->
 </div>

@@ -38,7 +38,14 @@ export class RecipeDetailComponent implements OnInit {
           });
         })
       )
-      .subscribe((recipe) => (this.recipe = recipe));
+      .subscribe((recipe) => {
+        this.recipe = recipe;
+        window.scroll({
+          top: 0,
+          left: 0,
+          behavior: 'smooth',
+        });
+      });
   }
 
   onMoveToShoppingList() {

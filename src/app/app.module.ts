@@ -16,9 +16,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { RecipeEffects } from './recipes/store/recipes.effects';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, ErrorPageComponent],
+  declarations: [AppComponent, HeaderComponent, ErrorPageComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,6 +32,7 @@ import { RecipeEffects } from './recipes/store/recipes.effects';
     EffectsModule.forRoot([AuthEffects, RecipeEffects]),
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     StoreRouterConnectingModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

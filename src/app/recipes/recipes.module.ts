@@ -10,6 +10,7 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipesComponent } from './recipes.component';
 import { StartRecipesComponent } from './start-recipes/start-recipes.component';
 import { SharedModule } from '../shared.module';
+import { NgxEditorModule } from 'ngx-editor';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { SharedModule } from '../shared.module';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+    NgxEditorModule,
   ],
+  providers: [],
 })
 export class RecipesModule {}

@@ -21,7 +21,11 @@
     "@ngrx/effects": "^15.2.1",
     "@ngrx/router-store": "^15.2.1",
     "@ngrx/store": "^15.2.1",
+    "@syncfusion/ej2-angular-richtexteditor": "^20.4.49",
     "bootstrap": "^3.4.1",
+    "bootstrap-icons": "^1.10.3",
+    "ngx-editor": "^15.2.0",
+    "ngx-quill": "^20.0.1",
     "rxjs": "^6.6.7",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

@@ -8,7 +8,12 @@ export interface State {
 }
 
 const initState: State = {
-  ingredients: [new Ingredient('test', 5, 'kg')],
+  ingredients: [
+    new Ingredient('Dummy', 1, 'kg'),
+    new Ingredient('Dummy', 1, 'litre'),
+    new Ingredient('Dummy', 5, 'grams'),
+    new Ingredient('Dummy', 10, 'pieces'),
+  ],
   editedIngredient: null,
   editedIngIndex: -1,
 };

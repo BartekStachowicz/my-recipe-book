@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as AuthActions from '../auth/store/auth.actions';
 import * as RecipesActions from '../recipes/store/recipes.actions';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'header-component',
@@ -16,7 +17,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   disabledSave = false;
   isAuthenticated = false;
   private userSub: Subscription;
-  constructor(private store: Store<fromApp.AppState>) {}
+  private recipeSub: Subscription;
+  constructor(
+    private store: Store<fromApp.AppState>,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.userSub = this.store
@@ -27,7 +33,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
       });
   }
 
-  onManage() {}
+  onManage() {
+    this.recipeSub = this.store.select('recipes').subscribe((data) => {
+      if (data.recipes.length === 0) {
+        this.disabledSave = true;
+      } else {
+        this.disabledSave = false;
+      }
+    });
+  }
 
   onStorageData() {
     this.store.dispatch(new RecipesActions.StoreRecipes());
@@ -39,6 +53,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.store.dispatch(new AuthActions.Logout());
+  }
+
+  onNewRecipe() {
+    this.router.navigate(['recipes/new-recipe']);
   }
 
   ngOnDestroy(): void {

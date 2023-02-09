@@ -1,3 +1,7 @@
+.navbar-inverse {
+  background-color: #171d1c;
+}
+
 .disable-link {
   color: gray;
   cursor: not-allowed;

@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import * as fromApp from '../../store/app.reducer';
 import * as RecipesActions from '../store/recipes.actions';
 import { Subscription } from 'rxjs';
+import { Editor } from 'ngx-editor';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -19,6 +20,8 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
 
   private storeSubscription: Subscription;
 
+  editor: Editor;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -31,12 +34,14 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
       this.editMode = params['id'] != null;
       this.initForm();
     });
+    this.editor = new Editor();
   }
 
   private initForm() {
     let recipeName = '';
     let recipeImgPath = '';
-    let recipeDesc = '';
+    let shortDesc = '';
+    let description = '';
     let recipeIngredients = new FormArray([]);
 
     if (this.editMode) {
@@ -52,7 +57,8 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
         .subscribe((recipe) => {
           recipeName = recipe.name;
           recipeImgPath = recipe.imagePath;
-          recipeDesc = recipe.description;
+          description = recipe.description;
+          shortDesc = recipe.shortDesc;
           if (recipe['ingredients']) {
             recipe.ingredients.forEach((el) => {
               recipeIngredients.push(
@@ -72,7 +78,8 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
 
     this.recipeForm = new FormGroup({
       name: new FormControl(recipeName, Validators.required),
-      description: new FormControl(recipeDesc, Validators.required),
+      description: new FormControl(description, Validators.required),
+      shortDesc: new FormControl(shortDesc, Validators.required),
       imagePath: new FormControl(recipeImgPath, Validators.required),
       ingredients: recipeIngredients,
     });
@@ -86,8 +93,10 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
           recipe: this.recipeForm.value,
         })
       );
+      this.store.dispatch(new RecipesActions.StoreRecipes());
     } else {
       this.store.dispatch(new RecipesActions.AddRecipe(this.recipeForm.value));
+      this.store.dispatch(new RecipesActions.StoreRecipes());
     }
     this.onCancel();
   }
@@ -125,5 +134,6 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     if (this.storeSubscription) {
       this.storeSubscription.unsubscribe();
     }
+    this.editor.destroy();
   }
 }

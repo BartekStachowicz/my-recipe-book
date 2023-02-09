@@ -1,128 +1,165 @@
-<div class="row">
-  <div class="col-xs-12">
-    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
-      <div class="row">
-        <div class="col-xs-12">
-          <button
-            type="submit"
-            class="btn btn-primary"
-            style="width: 75px; margin-right: 5px"
-            [disabled]="!recipeForm.valid"
-          >
-            Save
-          </button>
-          <button
-            type="button"
-            class="btn btn-primary"
-            style="width: 75px; margin-right: 5px"
-            (click)="onCancel()"
-          >
-            Cancel
-          </button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              class="form-control"
-              formControlName="name"
-            />
+<div class="my-container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-xs-12">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="width: 75px; margin-right: 5px"
+              [disabled]="!recipeForm.valid"
+            >
+              Save
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="width: 75px; margin-right: 5px"
+              (click)="onCancel()"
+            >
+              Cancel
+            </button>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="form-group">
-            <label for="imgPath">Image URL</label>
-            <input
-              type="text"
-              id="imgPath"
-              class="form-control"
-              formControlName="imagePath"
-              #imgPath
-            />
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-xs-12">
-          <img [src]="imgPath.value" class="img-responsive" />
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="form-group">
-            <label for="description">Description</label>
-            <textarea
-              type="text"
-              id="description"
-              class="form-control"
-              rows="6"
-              formControlName="description"
-            ></textarea>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12" formArrayName="ingredients">
-          <div
-            class="row"
-            *ngFor="let ingCtrl of controls; let index = index"
-            [formGroupName]="index"
-            style="margin-top: 5px"
-          >
-            <div class="col-xs-7">
-              <input type="text" class="form-control" formControlName="name" />
-            </div>
-            <div class="col-xs-2">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="name">Name</label>
               <input
-                type="number"
+                type="text"
+                id="name"
                 class="form-control"
-                formControlName="amount"
+                formControlName="name"
+                [placeholder]="'Type here...'"
               />
             </div>
-            <div class="col-xs-2">
-              <input type="text" class="form-control" formControlName="unit" />
-            </div>
-            <div>
-              <button
-                type="button"
-                class="btn btn-primary"
-                style="width: 40px; margin-left: 5px"
-                (click)="onDeleteIng(index)"
-              >
-                X
-              </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="imgPath">Image URL</label>
+              <input
+                type="text"
+                id="imgPath"
+                class="form-control"
+                formControlName="imagePath"
+                #imgPath
+                [placeholder]="'Type here...'"
+              />
             </div>
           </div>
         </div>
-      </div>
-      <hr />
-      <div class="row" style="margin-bottom: 50px">
-        <div class="col-xs-12">
-          <button
-            type="button"
-            class="btn btn-primary"
-            (click)="onAddIngredient()"
-          >
-            Add ingredient
-          </button>
-          <button
-            type="button"
-            class="btn btn-primary"
-            style="margin-left: 5px"
-            (click)="onClearIngredients()"
-          >
-            Clear All Ingredients
-          </button>
+        <hr />
+        <div class="row">
+          <div class="col-xs-12">
+            <img [src]="imgPath.value" class="img-responsive" alt="PREVIEW" />
+          </div>
         </div>
-      </div>
-    </form>
+        <hr />
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="shortDesc">Short description</label>
+              <textarea
+                type="text"
+                id="shortDesc"
+                class="form-control"
+                rows="2"
+                formControlName="shortDesc"
+                [placeholder]="'Type here...'"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="description">Description</label>
+              <ngx-editor-menu [editor]="editor"></ngx-editor-menu>
+              <ngx-editor
+                id="description"
+                [editor]="editor"
+                [placeholder]="'Type here...'"
+                formControlName="description"
+              ></ngx-editor>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label>Ingredients</label> (name/amount/unit)
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12" formArrayName="ingredients">
+            <div
+              class="row"
+              *ngFor="let ingCtrl of controls; let index = index"
+              [formGroupName]="index"
+              style="margin-top: 5px"
+            >
+              <div class="col-xs-7">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="name"
+                  [placeholder]="'Type name here...'"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="amount"
+                  [placeholder]="'0'"
+                />
+              </div>
+              <div class="col-xs-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="unit"
+                  [placeholder]="'unit'"
+                />
+              </div>
+              <div>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  style="width: 40px; margin-left: 5px"
+                  (click)="onDeleteIng(index)"
+                >
+                  X
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="row" style="margin-bottom: 50px">
+          <div class="col-xs-12">
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="onAddIngredient()"
+            >
+              Add ingredient
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="margin-left: 5px"
+              (click)="onClearIngredients()"
+            >
+              Clear All Ingredients
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
