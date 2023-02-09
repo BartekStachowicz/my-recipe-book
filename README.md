@@ -60,10 +60,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 [angular-url]: https://angular.io/
 [angular]: https://img.shields.io/badge/Angular-FF0000?style=for-the-badge&logo=Angular
 [preview-app]: src/assets/recipe-book-screen.png
-<<<<<<< HEAD
 [preview-desc]: src/assets/recipe-book-desc.png
-=======
->>>>>>> b46d63d3146106af6a570a5d09488f0ed9f4964c
 [github-issue]: https://img.shields.io/github/issues/BartekStachowicz/my-recipe-book?color=%235FBFF9&style=flat-square
 [linkedin]: https://img.shields.io/badge/Linkedin-0072b1?style=for-the-badge&logo=LinkedIn
 [linkedin-url]: https://linkedin.com/in/bstachowicz
