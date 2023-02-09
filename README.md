@@ -22,7 +22,7 @@
 <br/>
 <br/>
 
-<p align="center">Short description</p>
+### Short description
 
 ![RECIPE_BOOK_PREVIEW_DESC][preview-desc]
 
