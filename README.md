@@ -14,26 +14,6 @@
   </p>
 </div>
 
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <!-- <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li> -->
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
-
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
@@ -47,9 +27,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Contact
 
-![E-MAIL][gmail-addres] bartoszstachowicz@gmail.com <br/>
-![MOBILE][phone-number] 698 850 820 <br/>
-[![Linkedin][linkedin]][linkedin-url] <br/>
+![E-MAIL][gmail-addres]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bartoszstachowicz@gmail.com <br/>
+![MOBILE][phone-number]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;698 850 820 <br/>
+[![Linkedin][linkedin]][linkedin-url]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bstachowicz <br/>
 
 <!-- URL's -->
 
@@ -57,9 +37,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 [firebase-url]: https://firebase.com
 [angular-url]: https://angular.io/
 [angular]: https://img.shields.io/badge/Angular-FF0000?style=for-the-badge&logo=Angular
-[preview-app]: src\assets\recipe-book-screen.png
+[preview-app]: src/assets/recipe-book-screen.png
 [github-issue]: https://img.shields.io/github/issues/BartekStachowicz/my-recipe-book?color=%235FBFF9&style=flat-square
 [linkedin]: https://img.shields.io/badge/Linkedin-0072b1?style=for-the-badge&logo=LinkedIn
 [linkedin-url]: https://linkedin.com/in/bstachowicz
 [gmail-addres]: https://img.shields.io/badge/email-whitesmoke?style=for-the-badge&logo=Gmail
-[phone-number]: https://img.shields.io/badge/MOBILE-whitesmoke?style=for-the-badge&logo=Gmail&logoColor=black
+[phone-number]: https://img.shields.io/badge/mobile-whitesmoke?style=for-the-badge&logo=Gmail&logoColor=black
