@@ -38,7 +38,7 @@
 
 ## About The Project
 
-![RECIPE_BOOK_PREVIEW] [preview-app]
+![RECIPE_BOOK_PREVIEW][preview-app]
 
 ### Built With
 
@@ -47,9 +47,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Contact
 
-[![E-MAIL][gmail-addres]] bartoszstachowicz@gmail.com
-[![MOBILE][phone-number]] 698 850 820
-[![Linkedin][linkedin]][linkedin-url]
+![E-MAIL][gmail-addres] bartoszstachowicz@gmail.com
+![MOBILE][phone-number] 698 850 820
+![Linkedin][linkedin][linkedin-url]
 
 <!-- URL's -->
 
