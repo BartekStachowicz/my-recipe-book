@@ -47,9 +47,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Contact
 
-<p>![E-MAIL][gmail-addres] bartoszstachowicz@gmail.com</p>
-<p>![MOBILE][phone-number] 698 850 820</p>
-<p>[![Linkedin][linkedin]][linkedin-url]</p>
+![E-MAIL][gmail-addres] bartoszstachowicz@gmail.com <br/>
+![MOBILE][phone-number] 698 850 820 <br/>
+[![Linkedin][linkedin]][linkedin-url] <br/>
 
 <!-- URL's -->
 
