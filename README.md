@@ -53,7 +53,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 <!-- URL's -->
 
-[firebase]: https://img.shields.io/badge/FIREBASE-2C384A?style=for-the-badge&logo=Firebase&logoColor=black
+[firebase]: https://img.shields.io/badge/FIREBASE-2C384A?style=for-the-badge&logo=Firebase&logoColor=FFCB2B
 [firebase-url]: https://firebase.com
 [angular-url]: https://angular.io/
 [angular]: https://img.shields.io/badge/Angular-FF0000?style=for-the-badge&logo=Angular
