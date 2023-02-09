@@ -42,7 +42,7 @@
 
 ### Built With
 
-[![Angular][angular]][angular-url] & [![Firebase][firebase]][firebase-url]
+[![Angular][angular]][angular-url] & [![Firebase][firebase]][firebase-url] <br/>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 ## Contact
