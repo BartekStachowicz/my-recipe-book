@@ -49,7 +49,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![E-MAIL][gmail-addres] bartoszstachowicz@gmail.com
 ![MOBILE][phone-number] 698 850 820
-![Linkedin][linkedin][linkedin-url]
+[![Linkedin][linkedin]][linkedin-url]
 
 <!-- URL's -->
 
